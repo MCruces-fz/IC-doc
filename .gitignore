@@ -1,5 +1,6 @@
 # Own Files
 output/*
+s*.vim
 
 # Editors
 .vscode/
