@@ -1,6 +1,7 @@
 # Own Files
 output/*
 s*.vim
+*debug.py
 
 # Editors
 .vscode/
