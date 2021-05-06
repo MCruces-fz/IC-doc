@@ -2,6 +2,8 @@
 
 This function makes...
 
+The `map` function takes as first parameter some function 
+
 ```python
 from functools import wraps
 
@@ -9,7 +11,8 @@ def closing(target):
     try: yield
     finally: target.close()
 
-def   _exactly_one(spec): return not isinstance(spec, (tuple, list, type(None)))
+def _exactly_one(spec):
+    return not isinstance(spec, (tuple, list, type(None)))
 
 def coroutine(generator_function):
     @wraps(generator_function)
@@ -22,7 +25,8 @@ def coroutine(generator_function):
 def map(op=None, *, args=None, out=None, item=None):
     if item is not None:                                                                                                                                                                                         
         if args is not None or out is not None:
-            raise ValueError("dataflow.map: use of `item` parameter excludes both `args` and `out`")
+            raise ValueError("dataflow.map: use of `item` "
+                             "parameter excludes both `args` and `out`")
         assert args is None and out is None
         args = out = item
 
